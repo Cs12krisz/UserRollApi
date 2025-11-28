@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace UserRollAPI.Migrations
 {
     /// <inheritdoc />
-    public partial class CreateDbWithTables : Migration
+    public partial class AddRoleUserTable : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -46,12 +46,12 @@ namespace UserRollAPI.Migrations
                 name: "RoleUser",
                 columns: table => new
                 {
-                    RolesId = table.Column<Guid>(type: "char(36)", nullable: false),
-                    UsersId = table.Column<Guid>(type: "char(36)", nullable: false)
+                    UsersId = table.Column<Guid>(type: "char(36)", nullable: false),
+                    RolesId = table.Column<Guid>(type: "char(36)", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_RoleUser", x => new { x.RolesId, x.UsersId });
+                    table.PrimaryKey("PK_RoleUser", x => new { x.UsersId, x.RolesId });
                     table.ForeignKey(
                         name: "FK_RoleUser_Role_RolesId",
                         column: x => x.RolesId,
@@ -68,9 +68,9 @@ namespace UserRollAPI.Migrations
                 .Annotation("MySQL:Charset", "utf8mb4");
 
             migrationBuilder.CreateIndex(
-                name: "IX_RoleUser_UsersId",
+                name: "IX_RoleUser_RolesId",
                 table: "RoleUser",
-                column: "UsersId");
+                column: "RolesId");
         }
 
         /// <inheritdoc />

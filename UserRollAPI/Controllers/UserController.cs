@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using UserRollAPI.Models;
 using UserRollAPI.Models.Dtos;
+using Microsoft.AspNetCore.Cryptography.KeyDerivation;
+using System.Security.Cryptography;
 
 namespace UserRollAPI.Controllers
 {
@@ -23,12 +25,20 @@ namespace UserRollAPI.Controllers
 
             try
             {
+                byte[] salt = RandomNumberGenerator.GetBytes(128 / 8);
+                string hashed = Convert.ToBase64String(KeyDerivation.Pbkdf2(
+                    password: userDto.Password,
+                    salt: salt,
+                    prf: KeyDerivationPrf.HMACSHA512,
+                    iterationCount: 100000,
+                    numBytesRequested: 256 / 8));
+
                 var user = new User 
                 {
                     Id = Guid.NewGuid(),
                     Name = userDto.Name,
                     Email = userDto.Email,
-                    Password = userDto.Password
+                    Password = hashed
                 };
 
                 if (user != null)

@@ -173,6 +173,37 @@
         }
       }
     },
+    "/api/RoleUser": {
+      "post": {
+        "tags": [
+          "RoleUser"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddNewSwitchDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddNewSwitchDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/AddNewSwitchDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/User": {
       "post": {
         "tags": [
@@ -344,6 +375,20 @@
   },
   "components": {
     "schemas": {
+      "AddNewSwitchDto": {
+        "type": "object",
+        "properties": {
+          "userId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "roleId": {
+            "type": "string",
+            "format": "uuid"
+          }
+        },
+        "additionalProperties": false
+      },
       "Role": {
         "type": "object",
         "properties": {
@@ -355,10 +400,10 @@
             "type": "string",
             "nullable": true
           },
-          "users": {
+          "roleUsers": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/User"
+              "$ref": "#/components/schemas/RoleUser"
             },
             "nullable": true
           }
@@ -371,6 +416,26 @@
           "roleName": {
             "type": "string",
             "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "RoleUser": {
+        "type": "object",
+        "properties": {
+          "usersId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "user": {
+            "$ref": "#/components/schemas/User"
+          },
+          "rolesId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "role": {
+            "$ref": "#/components/schemas/Role"
           }
         },
         "additionalProperties": false
@@ -394,10 +459,10 @@
             "type": "string",
             "nullable": true
           },
-          "roles": {
+          "roleUsers": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/Role"
+              "$ref": "#/components/schemas/RoleUser"
             },
             "nullable": true
           }

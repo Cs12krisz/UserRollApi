@@ -1,4 +1,6 @@
-﻿namespace UserRollAPI.Models
+﻿using System.Security.Policy;
+
+namespace UserRollAPI.Models
 {
     public class User
     {
@@ -7,7 +9,7 @@
         public string Email { get; set; }
         public string Password { get; set; }
 
-        public ICollection<Role> Roles { get; set; } = new List<Role>();
+        public ICollection<RoleUser> RoleUsers { get; set; } = new List<RoleUser>();
 
     }
 }

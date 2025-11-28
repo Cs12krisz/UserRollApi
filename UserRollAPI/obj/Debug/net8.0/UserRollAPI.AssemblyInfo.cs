@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("UserRollAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1084e24500709ddfac6d76a925b5ad7fed3b9e7d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2b487bff9fb347e60c0e94ab0799c1dbb04ddf11")]
 [assembly: System.Reflection.AssemblyProductAttribute("UserRollAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("UserRollAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

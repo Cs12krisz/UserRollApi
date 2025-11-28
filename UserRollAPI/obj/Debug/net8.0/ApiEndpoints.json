@@ -103,6 +103,22 @@
     ]
   },
   {
+    "ContainingType": "UserRollAPI.Controllers.RoleUserController",
+    "Method": "AddNewRoleToUser",
+    "RelativePath": "api/RoleUser",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "addNewSwitchDto",
+        "Type": "UserRollAPI.Models.Dtos.AddNewSwitchDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "UserRollAPI.Controllers.UserController",
     "Method": "InsertUser",
     "RelativePath": "api/User",
