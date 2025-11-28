@@ -127,3 +127,4 @@ C:\Users\CsKrisz\source\repos\UserRollAPI\UserRollAPI\obj\Debug\net8.0\refint\Us
 C:\Users\CsKrisz\source\repos\UserRollAPI\UserRollAPI\obj\Debug\net8.0\UserRollAPI.pdb
 C:\Users\CsKrisz\source\repos\UserRollAPI\UserRollAPI\obj\Debug\net8.0\UserRollAPI.genruntimeconfig.cache
 C:\Users\CsKrisz\source\repos\UserRollAPI\UserRollAPI\obj\Debug\net8.0\ref\UserRollAPI.dll
+C:\Users\CsKrisz\source\repos\UserRollAPI\UserRollAPI\obj\Debug\net8.0\UserRollAPI.sourcelink.json

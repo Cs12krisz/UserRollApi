@@ -1,4 +1,6 @@
 
+using UserRollAPI.Models;
+
 namespace UserRollAPI
 {
     public class Program
@@ -6,6 +8,8 @@ namespace UserRollAPI
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+
+            builder.Services.AddDbContext<UserRoleDbContext>();
 
             // Add services to the container.
 
