@@ -1,0 +1,6 @@
+@UserRollAPI_HostAddress = http://localhost:5193
+
+GET {{UserRollAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
