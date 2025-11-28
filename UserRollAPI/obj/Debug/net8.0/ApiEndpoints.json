@@ -1,15 +1,21 @@
 [
   {
-    "ContainingType": "UserRollAPI.Controllers.WeatherForecastController",
-    "Method": "Get",
-    "RelativePath": "WeatherForecast",
-    "HttpMethod": "GET",
+    "ContainingType": "UserRollAPI.Controllers.UserController",
+    "Method": "InsertUser",
+    "RelativePath": "api/User",
+    "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "userDto",
+        "Type": "UserRollAPI.Models.Dtos.UserDto",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[UserRollAPI.WeatherForecast, UserRollAPI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "UserRollAPI.Models.User",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -17,7 +23,6 @@
         ],
         "StatusCode": 200
       }
-    ],
-    "EndpointName": "GetWeatherForecast"
+    ]
   }
 ]
