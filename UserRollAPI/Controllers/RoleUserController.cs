@@ -11,7 +11,10 @@ namespace UserRollAPI.Controllers
     {
         private readonly UserRoleDbContext _context;
 
-        public RoleUserController(UserRoleDbContext context) { }
+        public RoleUserController(UserRoleDbContext context) 
+        {
+            _context = context;
+        }
 
         [HttpPost]
         public async Task<ActionResult> AddNewRoleToUser(AddNewSwitchDto addNewSwitchDto)
@@ -24,7 +27,7 @@ namespace UserRollAPI.Controllers
                     RolesId = addNewSwitchDto.RoleId
                 };
 
-                //await _context.RoleUser.AddAsync(addroleUser);
+                await _context.RoleUser.AddAsync(addroleUser);
                 await _context.SaveChangesAsync();
                 return Ok(addroleUser);
             }
